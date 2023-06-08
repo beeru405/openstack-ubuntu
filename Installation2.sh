@@ -84,7 +84,8 @@ juju add-relation cinder:identity-service keystone:identity-service
 juju add-relation cinder:amqp rabbitmq-server:amqp
 juju add-relation cinder:image-service glance:image-service
 juju add-relation cinder:certificates vault:certificates
-juju deploy --channel zed/stable cinder-cephjuju add-relation cinder-ceph:storage-backend cinder:storage-backend
+juju deploy --channel zed/stable cinder-ceph
+juju add-relation cinder-ceph:storage-backend cinder:storage-backend
 juju add-relation cinder-ceph:ceph ceph-mon:client
 juju add-relation cinder-ceph:ceph-access nova-compute:ceph-access
 
