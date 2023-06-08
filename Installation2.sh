@@ -74,6 +74,8 @@ juju add-relation ceph-mon:osd ceph-osd:mon
 juju add-relation ceph-mon:client nova-compute:ceph
 juju add-relation ceph-mon:client glance:ceph
 
+juju config nova-compute libvirt-image-backend=rbd
+
 #cinder
 juju deploy --channel zed/stable --config cinder.yaml cinder
 juju deploy --channel 8.0/stable mysql-router cinder-mysql-router
